@@ -438,13 +438,6 @@
     const successMsg = document.getElementById("success-msg");
     const errorMsg = document.getElementById("error-msg");
 
-    const handler = { onDataChanged() { } };
-
-    (async () => {
-      const r = await window.dataSdk.init(handler);
-      if (r.isError) console.error("SDK init failed");
-    })();
-
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = document.querySelector('[data-template-id="submit-btn"]');
@@ -475,38 +468,30 @@
         message: fd.get("message") || "",
       };
 
-      const result = await window.dataSdk.create(record);
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
 
-      if (result.isOk) {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
+      fetch(scriptURL, { method: 'POST', body: fd })
+        .then(response => {
+          const activeLang = document.documentElement.lang || 'en';
+          const isAttending = document.getElementById('attendance_accept').checked;
 
-        fetch(scriptURL, { method: 'POST', body: fd })
-          .then(response => {
-            const activeLang = document.documentElement.lang || 'en';
-            const isAttending = document.getElementById('attendance_accept').checked;
+          document.getElementById('success-title').textContent = formTranslations[activeLang].successTitle;
 
-            document.getElementById('success-title').textContent = formTranslations[activeLang].successTitle;
-
-            if (isAttending) {
-              document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubAccept;
-            } else {
-              document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubDecline;
-            }
-            form.classList.add("hidden");
-            errorMsg.classList.add("hidden");
-            successMsg.classList.remove("hidden");
-          })
-          .catch(error => {
-            // If the connection fails, let the user try again
-            console.error('Error!', error.message);
-            alert("There was an error saving your RSVP. Please try again.");
-            submitBtn.disabled = false;
-          })
-      } else {
-        btn.disabled = false;
-        btn.style.opacity = "1";
-        errorMsg.classList.remove("hidden");
-      }
+          if (isAttending) {
+            document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubAccept;
+          } else {
+            document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubDecline;
+          }
+          form.classList.add("hidden");
+          errorMsg.classList.add("hidden");
+          successMsg.classList.remove("hidden");
+        })
+        .catch(error => {
+          // If the connection fails, let the user try again
+          console.error('Error!', error.message);
+          alert("There was an error saving your RSVP. Please try again.");
+          submitBtn.disabled = false;
+        })
     });
   </script>
   <script>
