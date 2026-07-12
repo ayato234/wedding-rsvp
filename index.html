@@ -470,9 +470,9 @@
         })
         .catch(error => {
           // If the connection fails, let the user try again
-          console.error('Error!', error.message);
+          console.error('Error!', errorMsg.message);
           alert("There was an error saving your RSVP. Please try again.");
-          submitBtn.disabled = false;
+          btn.disabled = false;
         })
     });
   </script>
