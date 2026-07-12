@@ -425,10 +425,10 @@
     switchFormLanguage("en");
 
     // Update attendance radio button labels to show proper English phrases on load
-    const attendanceYesLabel = form.querySelector(
+    const attendanceYesLabel = document.querySelector(
       'input[name="attendance"][value="Accepts with pleasure"]',
     ).nextElementSibling;
-    const attendanceNoLabel = form.querySelector(
+    const attendanceNoLabel = document.querySelector(
       'input[name="attendance"][value="Declines with regret"]',
     ).nextElementSibling;
     attendanceYesLabel.textContent = formTranslations.en.attendanceYes;
