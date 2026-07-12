@@ -200,10 +200,10 @@
       <!-- Allergies -->
       <div>
         <label data-template-id="allergies-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
-          for="allergies">Allergies</label>
+          for="allergies">Allergies and dietary restrictions</label>
         <textarea id="allergies" name="allergies" rows="2"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none"
-          placeholder="(optional)"></textarea>
+          placeholder="Please let us know if you have any allergies or dietary restrictions."></textarea>
       </div>
       <!-- After-Party -->
       <div>
@@ -217,7 +217,7 @@
               value="Will not join" required /><span data-template-id="afterparty-no"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
         </div>
-        <p class="text-xs text-[#8b6f47] text-center mt-2">
+        <p id="afterparty-note" class="text-xs text-[#8b6f47] text-center mt-2">
           The wedding reception and the after-party will be held consecutively, so you are welcome to remain at the venue between the two events.
         </p>
       </div>
@@ -227,7 +227,7 @@
           for="message"></label>
         <textarea id="message" name="message" rows="3"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none"
-          placeholder="(optional)"></textarea>
+          placeholder="Feel free to leave us a message."></textarea>
       </div>
       <!-- Honeypot Field -->
       <div style="display: none" aria-hidden="true">
@@ -282,12 +282,15 @@
         phoneLabel: "お電話番号",
         addressLabel: "ご住所",
         allergiesLabel: "アレルギー",
+        allergiesPlaceholder: "食物アレルギーがございましたらご記入ください",
         afterpartyLabel: "アフターパーティー",
         afterpartyYes: "参加する",
         afterpartyNo: "参加しない",
         afterpartyNote: "披露宴とアフターパーティーは続けて開催いたしますのでそのまま会場でお過ごしいただけます",
         messageLabel: "メッセージ",
-        submitBtn: "RSVPを送信",
+        messagePlaceholder: "ご自由にメッセージをご記入ください",
+        submitBtn: "招待状に回答する",
+        optionalPlaceholder: "任意"
       },
       en: {
         attendanceLabel: "Attendance",
@@ -297,13 +300,16 @@
         emailLabel: "Email Address",
         phoneLabel: "Phone Number",
         addressLabel: "Address",
-        allergiesLabel: "Allergies",
+        allergiesLabel: "Allergies and dietary restrictions",
+        allergiesPlaceholder: "Please let us know if you have any allergies or dietary restrictions.",
         afterpartyLabel: "After-Party",
         afterpartyYes: "Will join",
         afterpartyNo: "Will not join",
         afterpartyNote: "The wedding reception and the after-party will be held consecutively, so you are welcome to remain at the venue between the two events.",
         messageLabel: "Message",
-        submitBtn: "Send RSVP",
+        messagePlaceholder: "Feel free to leave us a message.",
+        submitBtn: "RSVP",
+        optionalPlaceholder: "optional"
       },
       vi: {
         attendanceLabel: "Tham dự",
@@ -314,12 +320,15 @@
         phoneLabel: "Số điện thoại",
         addressLabel: "Địa chỉ",
         allergiesLabel: "Dị ứng",
+        allergiesPlaceholder: "Vui lòng cho biết tất cả các hạn chế về chế độ ăn uống, những món không thích và các dị ứng có.",
         afterpartyLabel: "After-Party",
         afterpartyYes: "Đi",
         afterpartyNo: "Không đi",
         afterpartyNote: "Tiệc cưới và tiệc sau lễ cưới sẽ được tổ chức liên tiếp, vì vậy quý khách có thể ở lại địa điểm tổ chức và thư giãn trong thời gian giữa hai buổi tiệc.",
         messageLabel: "Lời nhắn",
-        submitBtn: "Gửi RSVP",
+        messagePlaceholder: "Nếu muốn, quý khách vui lòng để lại lời nhắn cho chúng tôi.",
+        submitBtn: "Xác nhận tham dự",
+        optionalPlaceholder: "Tùy chọn"
       },
     };
 
@@ -346,12 +355,15 @@
         formTranslations[lang].emailLabel;
       document.querySelector('[data-template-id="phone-label"]').textContent =
         formTranslations[lang].phoneLabel;
+      document.getElementById('phone').placeholder = formTranslations[lang].optionalPlaceholder;
       document.querySelector(
         '[data-template-id="address-label"]',
       ).textContent = formTranslations[lang].addressLabel;
+      document.getElementById('address').placeholder = formTranslations[lang].optionalPlaceholder;
       document.querySelector(
         '[data-template-id="allergies-label"]',
       ).textContent = formTranslations[lang].allergiesLabel;
+      document.getElementById('allergies').placeholder = formTranslations[lang].allergiesPlaceholder;
       document.querySelector(
         '[data-template-id="afterparty-label"]',
       ).textContent = formTranslations[lang].afterpartyLabel;
@@ -365,9 +377,11 @@
         .forEach(
           (el) => (el.textContent = formTranslations[lang].afterpartyNo),
         );
+      document.getElementById('afterparty-note').textContent = formTranslations[lang].afterpartyNote;
       document.querySelector(
         '[data-template-id="message-label"]',
       ).textContent = formTranslations[lang].messageLabel;
+      document.getElementById('message').placeholder = formTranslations[lang].messagePlaceholder;
       document.querySelector('[data-template-id="submit-btn"]').textContent =
         formTranslations[lang].submitBtn;
 
