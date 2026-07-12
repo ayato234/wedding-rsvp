@@ -33,6 +33,12 @@
       font-size: 3.5rem;
     }
 
+    /* Adds a red/orange asterisk to required fields */
+    .required-asterisk::after {
+        content: " *";
+        color: #c97340;
+    }
+
     @keyframes fall-cw {
       0% {
         opacity: 1;
@@ -126,10 +132,9 @@
   <div id="app"></div>
   <main class="max-w-lg mx-auto">
     <div class="text-center mb-2">
-      <h1 data-template-id="page-title" class="canva-text title-font text-center leading-relaxed"></h1>
-      <p class="text-[#c97b4d] text-sm tracking-[0.3em] mb-3">
-        AYATO &amp; MAI LY
-      </p>
+      <h1 data-template-id="page-title"
+        class="canva-text title-font text-center leading-relaxed title-main text-[#6b4423]">Wedding Invitation</h1>
+      <p class="text-[#c97b4d] text-sm tracking-[0.3em] mb-3">AYATO &amp; MAI LY</p>
     </div>
     <div class="decorative-line mb-10 mx-auto" style="max-width: 240px"></div>
     <form id="rsvp-form"
@@ -152,7 +157,7 @@
       <!-- Attendance -->
       <div>
         <label data-template-id="attendance-label"
-          class="canva-text block text-sm font-medium text-[#6b4423] mb-3"></label>
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk"></label>
         <div class="flex gap-6 justify-center">
           <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="attendance"
               value="Accepts with pleasure" required /><span data-template-id="attendance-yes"
@@ -164,14 +169,14 @@
       </div>
       <!-- Name -->
       <div>
-        <label data-template-id="name-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
+        <label data-template-id="name-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
           for="full_name">Name</label>
         <input id="full_name" name="full_name" type="text" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
       <!-- Email -->
       <div>
-        <label data-template-id="email-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
+        <label data-template-id="email-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
           for="email">Email Address</label>
         <input id="email" name="email" type="email" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
@@ -181,14 +186,6 @@
         <label data-template-id="phone-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
           for="phone">Phone Number</label>
         <input id="phone" name="phone" type="tel"
-          class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors"
-          placeholder="(optional)" />
-      </div>
-      <!-- Postal Code -->
-      <div>
-        <label data-template-id="postal-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
-          for="postal_code">Postal Code</label>
-        <input id="postal_code" name="postal_code" type="text"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors"
           placeholder="(optional)" />
       </div>
@@ -211,7 +208,7 @@
       <!-- After-Party -->
       <div>
         <label data-template-id="afterparty-label"
-          class="canva-text block text-sm font-medium text-[#6b4423] mb-3">After-Party</label>
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk">After-Party</label>
         <div class="flex gap-6 justify-center">
           <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="afterparty"
               value="Will Join" required /><span data-template-id="afterparty-yes"
@@ -220,6 +217,9 @@
               value="Will not join" required /><span data-template-id="afterparty-no"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
         </div>
+        <p class="text-xs text-[#8b6f47] text-center mt-2">
+          The wedding reception and the after-party will be held consecutively, so you are welcome to remain at the venue between the two events.
+        </p>
       </div>
       <!-- Message -->
       <div>
@@ -280,12 +280,12 @@
         nameLabel: "お名前",
         emailLabel: "メールアドレス",
         phoneLabel: "お電話番号",
-        postalLabel: "郵便番号",
         addressLabel: "ご住所",
         allergiesLabel: "アレルギー",
         afterpartyLabel: "アフターパーティー",
         afterpartyYes: "参加する",
         afterpartyNo: "参加しない",
+        afterpartyNote: "披露宴とアフターパーティーは続けて開催いたしますのでそのまま会場でお過ごしいただけます",
         messageLabel: "メッセージ",
         submitBtn: "RSVPを送信",
       },
@@ -296,12 +296,12 @@
         nameLabel: "Name",
         emailLabel: "Email Address",
         phoneLabel: "Phone Number",
-        postalLabel: "Postal Code",
         addressLabel: "Address",
         allergiesLabel: "Allergies",
         afterpartyLabel: "After-Party",
         afterpartyYes: "Will join",
         afterpartyNo: "Will not join",
+        afterpartyNote: "The wedding reception and the after-party will be held consecutively, so you are welcome to remain at the venue between the two events.",
         messageLabel: "Message",
         submitBtn: "Send RSVP",
       },
@@ -312,12 +312,12 @@
         nameLabel: "Họ và tên",
         emailLabel: "Địa chỉ email",
         phoneLabel: "Số điện thoại",
-        postalLabel: "Mã bưu chính",
         addressLabel: "Địa chỉ",
         allergiesLabel: "Dị ứng",
-        afterpartyLabel: "Tiệc hậu mãi",
-        afterpartyYes: "Có",
-        afterpartyNo: "Không",
+        afterpartyLabel: "After-Party",
+        afterpartyYes: "Đi",
+        afterpartyNo: "Không đi",
+        afterpartyNote: "Tiệc cưới và tiệc sau lễ cưới sẽ được tổ chức liên tiếp, vì vậy quý khách có thể ở lại địa điểm tổ chức và thư giãn trong thời gian giữa hai buổi tiệc.",
         messageLabel: "Lời nhắn",
         submitBtn: "Gửi RSVP",
       },
@@ -346,9 +346,6 @@
         formTranslations[lang].emailLabel;
       document.querySelector('[data-template-id="phone-label"]').textContent =
         formTranslations[lang].phoneLabel;
-      document.querySelector(
-        '[data-template-id="postal-label"]',
-      ).textContent = formTranslations[lang].postalLabel;
       document.querySelector(
         '[data-template-id="address-label"]',
       ).textContent = formTranslations[lang].addressLabel;
@@ -447,7 +444,6 @@
         full_name: fd.get("full_name") || "",
         email: fd.get("email") || "",
         phone: fd.get("phone") || "",
-        postal_code: fd.get("postal_code") || "",
         address: fd.get("address") || "",
         allergies: fd.get("allergies") || "",
         afterparty: fd.get("afterparty") || "",
