@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="de">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260710-05-9ed98a3"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Noto+Sans+JP:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/0179d719c431a79e.data_sdk.js" integrity="sha512-OsRvJkI5GkC3MJQcgotQYotpzrMSX415GiKKgvYdxQEEkzD/fdchShO2FMSy0PJr/tiINMXOk5Vl2zAgg6bUiA=="></script>
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; }
+    .font-serif-display { font-family: 'Alex Brush', cursive; }
+    .title-main { font-family: 'Alex Brush', cursive; font-size: 3.5rem; }
+    @keyframes fall-cw {
+      0% { 
+        opacity: 1; 
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% { 
+        opacity: 0.2; 
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+    @keyframes fall-ccw {
+      0% { 
+        opacity: 1; 
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% { 
+        opacity: 0.2; 
+        transform: translateY(100vh) rotate(-360deg);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .leaf { 
+      position: fixed; 
+      font-size: 2.5rem; 
+      pointer-events: none;
+      z-index: 10;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* Custom radio button styling */
+    .radio-wrapper input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d4844a;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease;
+      background: white;
+      flex-shrink: 0;
+    }
+    .radio-wrapper input[type="radio"]:hover {
+      border-color: #c97340;
+      box-shadow: 0 0 8px rgba(212, 132, 74, 0.2);
+    }
+    .radio-wrapper input[type="radio"]:checked {
+      background: linear-gradient(135deg, #d4844a 0%, #c97340 100%);
+      border-color: #c97340;
+      box-shadow: 0 0 12px rgba(212, 132, 74, 0.3);
+    }
+    .decorative-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4844a, transparent);
+      margin: 1rem 0;
+    }
+    #rsvp-form {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    #success-msg {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/9432170dbd2ae0df.resizing_sdk.js" type="text/javascript" integrity="sha512-FeT+58sb1f9ejWPWFjCbJvTT+SDwGV+ngrHUnlO7TWEOoqwOLj6p256kO3vOL7DIWl1cIgrobiof8v2bOigwPg=="></script>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen py-16 px-4">
+  <div id="app"></div>
+  <main class="max-w-lg mx-auto">
+   <div class="text-center mb-2">
+    <h1 data-template-id="page-title" class="canva-text title-font text-center leading-relaxed"></h1>
+    <p class="text-[#c97b4d] text-sm tracking-[0.3em] mb-3">AYATO &amp; MAI LY</p>
+   </div>
+   <div class="decorative-line mb-10 mx-auto" style="max-width: 240px;"></div>
+   <form id="rsvp-form" class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8 space-y-6">
+    <div class="flex gap-2 justify-center mb-6"><button id="lang-form-jp" type="button" class="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#d4844a] text-white transition-all hover:bg-[#c97340]">日本語</button> <button id="lang-form-en" type="button" class="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-300 text-[#6b4423] transition-all hover:bg-gray-400">English</button> <button id="lang-form-vi" type="button" class="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-300 text-[#6b4423] transition-all hover:bg-gray-400">Tiếng Việt</button>
+    </div>
+    <div>
+     <label data-template-id="attendance-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-3"></label>
+     <div class="flex gap-6 justify-center">
+      <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="attendance" value="Accepts with pleasure" required><span data-template-id="attendance-yes" class="canva-text ml-3 text-sm text-[#6b4423]"></span></label> <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="attendance" value="Declines with regret"><span data-template-id="attendance-no" class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
+     </div>
+    </div>
+    <div>
+     <label data-template-id="name-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="full_name"></label> <input id="full_name" name="full_name" type="text" required class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors">
+    </div>
+    <div>
+     <label data-template-id="email-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="email"></label> <input id="email" name="email" type="email" required class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors">
+    </div>
+    <div>
+     <label data-template-id="phone-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="phone"></label> <input id="phone" name="phone" type="tel" class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" placeholder="(optional)">
+    </div>
+    <div>
+     <label data-template-id="postal-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="postal_code"></label> <input id="postal_code" name="postal_code" type="text" class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" placeholder="(optional)">
+    </div>
+    <div>
+     <label data-template-id="address-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="address"></label> <input id="address" name="address" type="text" class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" placeholder="(optional)">
+    </div>
+    <div>
+     <label data-template-id="allergies-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="allergies"></label> <textarea id="allergies" name="allergies" rows="2" class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none" placeholder="(optional)"></textarea>
+    </div>
+    <div>
+     <label data-template-id="afterparty-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-3"></label>
+     <div class="flex gap-6 justify-center">
+      <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="afterparty" value="yes" required><span data-template-id="afterparty-yes" class="canva-text ml-3 text-sm text-[#6b4423]"></span></label> <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="afterparty" value="no" required><span data-template-id="afterparty-no" class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
+     </div>
+    </div>
+    <div>
+     <label data-template-id="message-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="message"></label> <textarea id="message" name="message" rows="3" class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none" placeholder="(optional)"></textarea>
+    </div><button data-template-id="submit-btn" type="submit" class="canva-button w-full bg-[#c97340] text-white rounded-lg py-3 text-sm font-medium hover:bg-[#b8643a] transition-colors shadow-md hover:shadow-lg mt-6"></button>
+   </form>
+   <div id="success-msg" class="hidden">
+    <div class="text-center">
+     <div data-template-id="confirmation-section" class="canva-section bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8">
+      <p data-template-id="success-text" class="canva-text text-xl font-semibold mb-6"></p>
+      <p data-template-id="celebration-message" class="canva-text text-base leading-relaxed" style="color: #4a3728;"></p>
+     </div>
+    </div>
+   </div>
+   <div id="error-msg" class="hidden text-center py-6">
+    <p data-template-id="error-text" class="canva-text text-base"></p>
+   </div>
+  </main>
+  <script src="/_sdk/719055fef2a85d14.editing_sdk.js" integrity="sha512-kFqrdGgIiTOsu307feB5Cy3JVP9IayftsmCIZ0csxYBGuBmJQPhyvcnmKR8F0fTW97h5s1gAvz3SumI8zJ6OxQ=="></script>
+  <script>
+    // Create falling autumn leaves
+    const leaves = ['🍂', '🍁', '🍃'];
+    function createLeaf() {
+      const leaf = document.createElement('div');
+      leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)];
+      leaf.className = 'leaf';
+      leaf.style.left = Math.random() * 100 + '%';
+      leaf.style.top = '-100px';
+      const duration = 8 + Math.random() * 4;
+      const direction = Math.random() > 0.5 ? 'cw' : 'ccw';
+      leaf.style.animation = `fall-${direction} ${duration}s linear forwards`;
+      document.getElementById('app').appendChild(leaf);
+      setTimeout(() => leaf.remove(), duration * 1000);
+    }
+    setInterval(createLeaf, 1500);
+
+    // Language translations for form labels and inputs
+    const formTranslations = {
+      jp: {
+        attendanceLabel: 'ご出欠',
+        attendanceYes: 'ご出席',
+        attendanceNo: 'ご欠席',
+        nameLabel: 'お名前',
+        emailLabel: 'メールアドレス',
+        phoneLabel: 'お電話番号',
+        postalLabel: '郵便番号',
+        addressLabel: 'ご住所',
+        allergiesLabel: 'アレルギー',
+        afterpartyLabel: 'アフターパーティー',
+        afterpartyYes: 'はい',
+        afterpartyNo: 'いいえ',
+        messageLabel: 'メッセージ',
+        submitBtn: 'RSVPを送信'
+      },
+      en: {
+        attendanceLabel: 'Attendance',
+        attendanceYes: 'Accepts with pleasure',
+        attendanceNo: 'Declines with regret',
+        nameLabel: 'Name',
+        emailLabel: 'Email Address',
+        phoneLabel: 'Phone Number',
+        postalLabel: 'Postal Code',
+        addressLabel: 'Address',
+        allergiesLabel: 'Allergies',
+        afterpartyLabel: 'After-Party',
+        afterpartyYes: 'Yes',
+        afterpartyNo: 'No',
+        messageLabel: 'Message',
+        submitBtn: 'Send RSVP'
+      },
+      vi: {
+        attendanceLabel: 'Tham dự',
+        attendanceYes: 'Rất hân hạnh được chấp nhận',
+        attendanceNo: 'Từ chối với sự tiếc nuối',
+        nameLabel: 'Họ và tên',
+        emailLabel: 'Địa chỉ email',
+        phoneLabel: 'Số điện thoại',
+        postalLabel: 'Mã bưu chính',
+        addressLabel: 'Địa chỉ',
+        allergiesLabel: 'Dị ứng',
+        afterpartyLabel: 'Tiệc hậu mãi',
+        afterpartyYes: 'Có',
+        afterpartyNo: 'Không',
+        messageLabel: 'Lời nhắn',
+        submitBtn: 'Gửi RSVP'
+      }
+    };
+
+    let currentFormLang = 'en';
+
+    function switchFormLanguage(lang) {
+      currentFormLang = lang;
+      document.querySelector('[data-template-id="attendance-label"]').textContent = formTranslations[lang].attendanceLabel;
+      document.querySelectorAll('[data-template-id="attendance-yes"]').forEach(el => el.textContent = formTranslations[lang].attendanceYes);
+      document.querySelectorAll('[data-template-id="attendance-no"]').forEach(el => el.textContent = formTranslations[lang].attendanceNo);
+      document.querySelector('[data-template-id="name-label"]').textContent = formTranslations[lang].nameLabel;
+      document.querySelector('[data-template-id="email-label"]').textContent = formTranslations[lang].emailLabel;
+      document.querySelector('[data-template-id="phone-label"]').textContent = formTranslations[lang].phoneLabel;
+      document.querySelector('[data-template-id="postal-label"]').textContent = formTranslations[lang].postalLabel;
+      document.querySelector('[data-template-id="address-label"]').textContent = formTranslations[lang].addressLabel;
+      document.querySelector('[data-template-id="allergies-label"]').textContent = formTranslations[lang].allergiesLabel;
+      document.querySelector('[data-template-id="afterparty-label"]').textContent = formTranslations[lang].afterpartyLabel;
+      document.querySelectorAll('[data-template-id="afterparty-yes"]').forEach(el => el.textContent = formTranslations[lang].afterpartyYes);
+      document.querySelectorAll('[data-template-id="afterparty-no"]').forEach(el => el.textContent = formTranslations[lang].afterpartyNo);
+      document.querySelector('[data-template-id="message-label"]').textContent = formTranslations[lang].messageLabel;
+      document.querySelector('[data-template-id="submit-btn"]').textContent = formTranslations[lang].submitBtn;
+
+      // Update form language button states
+      document.querySelectorAll('#lang-form-jp, #lang-form-en, #lang-form-vi').forEach(btn => {
+        btn.classList.remove('bg-[#d4844a]', 'text-white');
+        btn.classList.add('bg-gray-300', 'text-[#6b4423]');
+      });
+      document.getElementById(`lang-form-${lang}`).classList.remove('bg-gray-300', 'text-[#6b4423]');
+      document.getElementById(`lang-form-${lang}`).classList.add('bg-[#d4844a]', 'text-white');
+    }
+
+    document.getElementById('lang-form-jp').addEventListener('click', () => switchFormLanguage('jp'));
+    document.getElementById('lang-form-en').addEventListener('click', () => switchFormLanguage('en'));
+    document.getElementById('lang-form-vi').addEventListener('click', () => switchFormLanguage('vi'));
+    
+    // Initialize form with English language
+    switchFormLanguage('en');
+    
+    // Update attendance radio button labels to show proper English phrases on load
+    const attendanceYesLabel = form.querySelector('input[name="attendance"][value="Accepts with pleasure"]').nextElementSibling;
+    const attendanceNoLabel = form.querySelector('input[name="attendance"][value="Declines with regret"]').nextElementSibling;
+    attendanceYesLabel.textContent = 'Accepts with pleasure';
+    attendanceNoLabel.textContent = 'Declines with regret';
+
+
+
+    const form = document.getElementById('rsvp-form');
+    const successMsg = document.getElementById('success-msg');
+    const errorMsg = document.getElementById('error-msg');
+
+    const handler = { onDataChanged() {} };
+
+    (async () => {
+        const r = await window.dataSdk.init(handler);
+        if (r.isError) console.error('SDK init failed');
+    })();
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.querySelector('[data-template-id="submit-btn"]');
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        errorMsg.classList.add('hidden');
+
+        const fd = new FormData(form);
+        const record = {
+            attendance: fd.get('attendance') || '',
+            full_name: fd.get('full_name') || '',
+            email: fd.get('email') || '',
+            phone: fd.get('phone') || '',
+            postal_code: fd.get('postal_code') || '',
+            address: fd.get('address') || '',
+            allergies: fd.get('allergies') || '',
+            afterparty: fd.get('afterparty') || '',
+            message: fd.get('message') || ''
+        };
+
+        const result = await window.dataSdk.create(record);
+
+        if (result.isOk) {
+            form.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            document.getElementById('success-text').textContent = 'Thank you! Your RSVP has been received. 💐';
+            document.getElementById('celebration-message').textContent = 'We look forward to celebrating with you and seeing you at our wedding.';
+        } else {
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            errorMsg.classList.remove('hidden');
+        }
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1a0abeb7310a067',t:'MTc4Mzg2NTg0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
