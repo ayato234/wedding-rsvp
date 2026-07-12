@@ -35,8 +35,8 @@
 
     /* Adds a red/orange asterisk to required fields */
     .required-asterisk::after {
-        content: " *";
-        color: #c97340;
+      content: " *";
+      color: #c97340;
     }
 
     @keyframes fall-cw {
@@ -159,25 +159,26 @@
         <label data-template-id="attendance-label"
           class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk"></label>
         <div class="flex gap-6 justify-center">
-          <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="attendance"
-              value="Accepts with pleasure" required /><span data-template-id="attendance-yes"
+          <label class="flex items-center radio-wrapper cursor-pointer"><input id="attendance_accept" type="radio"
+              name="attendance" value="Accepts with pleasure" required /><span data-template-id="attendance-yes"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
-          <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="attendance"
-              value="Declines with regret" /><span data-template-id="attendance-no"
+          <label class="flex items-center radio-wrapper cursor-pointer"><input id="attendance_decline" type="radio"
+              name="attendance" value="Declines with regret" /><span data-template-id="attendance-no"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
         </div>
       </div>
       <!-- Name -->
       <div>
-        <label data-template-id="name-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
+        <label data-template-id="name-label"
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
           for="full_name">Name</label>
         <input id="full_name" name="full_name" type="text" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
       <!-- Email -->
       <div>
-        <label data-template-id="email-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
-          for="email">Email Address</label>
+        <label data-template-id="email-label"
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk" for="email">Email</label>
         <input id="email" name="email" type="email" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
@@ -210,21 +211,22 @@
         <label data-template-id="afterparty-label"
           class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk">After-Party</label>
         <div class="flex gap-6 justify-center">
-          <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="afterparty"
-              value="Will Join" required /><span data-template-id="afterparty-yes"
+          <label class="flex items-center radio-wrapper cursor-pointer"><input id="afterparty_join" type="radio"
+              name="afterparty" value="Will Join" required /><span data-template-id="afterparty-yes"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
-          <label class="flex items-center radio-wrapper cursor-pointer"><input type="radio" name="afterparty"
-              value="Will not join" required /><span data-template-id="afterparty-no"
+          <label class="flex items-center radio-wrapper cursor-pointer"><input id="afterparty_skip" type="radio"
+              name="afterparty" value="Will not join" required /><span data-template-id="afterparty-no"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
         </div>
         <p id="afterparty-note" class="text-xs text-[#8b6f47] text-center mt-2">
-          The wedding reception and the after-party will be held consecutively, so you are welcome to remain at the venue between the two events.
+          The wedding reception and the after-party will be held consecutively, so you are welcome to remain at the
+          venue between the two events.
         </p>
       </div>
       <!-- Message -->
       <div>
         <label data-template-id="message-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
-          for="message"></label>
+          for="message">Message</label>
         <textarea id="message" name="message" rows="3"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none"
           placeholder="Feel free to leave us a message."></textarea>
@@ -238,12 +240,12 @@
       <button data-template-id="submit-btn" type="submit"
         class="canva-button w-full bg-[#c97340] text-white rounded-lg py-3 text-sm font-medium hover:bg-[#b8643a] transition-colors shadow-md hover:shadow-lg mt-6"></button>
     </form>
-    <div id="success-msg" class="hidden">
+    <div id="success-msg" class="hidden text-center">
       <div class="text-center">
         <div data-template-id="confirmation-section"
           class="canva-section bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8">
-          <p data-template-id="success-text" class="canva-text text-xl font-semibold mb-6"></p>
-          <p data-template-id="celebration-message" class="canva-text text-base leading-relaxed" style="color: #4a3728">
+          <p id="success-title" class="canva-text text-xl font-semibold mb-6">Thank you for your response.</p>
+          <p id="success-sub" class="canva-text text-base leading-relaxed" style="color: #4a3728">
           </p>
         </div>
       </div>
@@ -290,14 +292,17 @@
         messageLabel: "メッセージ",
         messagePlaceholder: "ご自由にメッセージをご記入ください",
         submitBtn: "招待状に回答する",
-        optionalPlaceholder: "任意"
+        optionalPlaceholder: "任意",
+        successTitle: "ご回答ありがとうございました",
+        successSubAccept: "当日お会いできることを楽しみにしております",
+        successSubDecline: "ご一緒できないことは残念ですが温かいお祝いのお気持ちに心より感謝いたします"
       },
       en: {
         attendanceLabel: "Attendance",
         attendanceYes: "Accepts with pleasure",
         attendanceNo: "Declines with regret",
         nameLabel: "Name",
-        emailLabel: "Email Address",
+        emailLabel: "Email",
         phoneLabel: "Phone Number",
         addressLabel: "Address",
         allergiesLabel: "Allergies and dietary restrictions",
@@ -309,7 +314,10 @@
         messageLabel: "Message",
         messagePlaceholder: "Feel free to leave us a message.",
         submitBtn: "RSVP",
-        optionalPlaceholder: "optional"
+        optionalPlaceholder: "optional",
+        successTitle: "Thank you for your response.",
+        successSubAccept: "We look forward to celebrating with you.",
+        successSubDecline: "We are sorry you won't be able to join us, but we truly appreciate your warm wishes."
       },
       vi: {
         attendanceLabel: "Tham dự",
@@ -328,7 +336,10 @@
         messageLabel: "Lời nhắn",
         messagePlaceholder: "Nếu muốn, quý khách vui lòng để lại lời nhắn cho chúng tôi.",
         submitBtn: "Xác nhận tham dự",
-        optionalPlaceholder: "Tùy chọn"
+        optionalPlaceholder: "Tùy chọn",
+        successTitle: "Cảm ơn quý khách đã phản hồi.",
+        successSubAccept: "Chúng tôi rất mong được gặp quý khách trong ngày trọng đại của mình.",
+        successSubDecline: "Chúng tôi rất tiếc vì quý khách không thể tham dự, nhưng xin chân thành cảm ơn những lời chúc tốt đẹp của quý khách."
       },
     };
 
@@ -467,13 +478,31 @@
       const result = await window.dataSdk.create(record);
 
       if (result.isOk) {
-        form.classList.add("hidden");
-        errorMsg.classList.add("hidden");
-        successMsg.classList.remove("hidden");
-        document.getElementById("success-text").textContent =
-          "Thank you! Your RSVP has been received. 💐";
-        document.getElementById("celebration-message").textContent =
-          "We look forward to celebrating with you and seeing you at our wedding.";
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
+
+        fetch(scriptURL, { method: 'POST', body: fd })
+          .then(response => {
+            const activeLang = document.documentElement.lang || 'en';
+            const isAttending = document.getElementById('attendance_accept').checked;
+
+            document.getElementById('success-title').textContent = formTranslations[activeLang].successTitle;
+
+            if (isAttending) {
+              document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubAccept;
+            } else {
+              document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubDecline;
+            }
+            form.classList.add("hidden");
+            errorMsg.classList.add("hidden");
+            successMsg.classList.remove("hidden");
+          })
+          .catch(error => {
+            // If the connection fails, let the user try again
+            console.error('Error!', error.message);
+            alert("There was an error saving your RSVP. Please try again.");
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          })
       } else {
         btn.disabled = false;
         btn.style.opacity = "1";
