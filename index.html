@@ -457,16 +457,6 @@
         return; // This stops the script from sending the data to your database
       }
       // ---------------------------
-      const record = {
-        attendance: fd.get("attendance") || "",
-        full_name: fd.get("full_name") || "",
-        email: fd.get("email") || "",
-        phone: fd.get("phone") || "",
-        address: fd.get("address") || "",
-        allergies: fd.get("allergies") || "",
-        afterparty: fd.get("afterparty") || "",
-        message: fd.get("message") || "",
-      };
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
 
