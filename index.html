@@ -452,7 +452,7 @@
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
 
-      fetch(scriptURL, { method: 'POST', body: fd })
+      fetch(scriptURL, { method: 'POST', body: fd, mode:"no-cors" })
         .then(response => {
           const activeLang = document.documentElement.lang || 'en';
           const isAttending = document.getElementById('attendance_accept').checked;
