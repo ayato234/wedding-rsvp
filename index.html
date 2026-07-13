@@ -136,15 +136,15 @@
       <!-- Language Selector -->
       <div class="flex gap-2 justify-center mb-6">
         <button id="lang-form-jp" type="button"
-          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#d4844a] text-white transition-all hover:bg-[#c97340]">
+          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-white text-[#d4844a] transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
           日本語
         </button>
         <button id="lang-form-en" type="button"
-          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-300 text-[#6b4423] transition-all hover:bg-gray-400">
+          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#d4844a] text-white transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
           English
         </button>
         <button id="lang-form-vi" type="button"
-          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-300 text-[#6b4423] transition-all hover:bg-gray-400">
+          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-white text-[#d4844a] transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
           Tiếng Việt
         </button>
       </div>
@@ -396,14 +396,11 @@
         .querySelectorAll("#lang-form-jp, #lang-form-en, #lang-form-vi")
         .forEach((btn) => {
           btn.classList.remove("bg-[#d4844a]", "text-white");
-          btn.classList.add("bg-gray-300", "text-[#6b4423]");
+          btn.classList.add("bg-white", "text-[#d4844a]");
         });
-      document
-        .getElementById(`lang-form-${lang}`)
-        .classList.remove("bg-gray-300", "text-[#6b4423]");
-      document
-        .getElementById(`lang-form-${lang}`)
-        .classList.add("bg-[#d4844a]", "text-white");
+      const activeBtn = document.getElementById(`lang-form-${lang}`);
+      activeBtn.classList.remove("bg-white", "text-[#d4844a]");
+      activeBtn.classList.add("bg-[#d4844a]", "text-white");
     }
 
     document
