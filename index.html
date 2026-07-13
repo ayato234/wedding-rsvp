@@ -238,14 +238,14 @@
       <div class="text-center">
         <div data-template-id="confirmation-section"
           class="canva-section bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8">
-          <p id="success-title" class="canva-text text-xl font-semibold mb-6">Thank you for your response.</p>
+          <p id="success-title" class="canva-text text-base leading-relaxed" style="color: #4a3728">Thank you for your response.</p>
           <p id="success-sub" class="canva-text text-base leading-relaxed" style="color: #4a3728">
           </p>
         </div>
       </div>
     </div>
     <div id="error-msg" class="hidden text-center py-6">
-      <p data-template-id="error-text" class="canva-text text-base"></p>
+      <p id="error-text" class="canva-text text-base"></p>
     </div>
   </main>
   <script>
@@ -287,7 +287,8 @@
         optionalPlaceholder: "任意",
         successTitle: "ご回答ありがとうございました",
         successSubAccept: "当日お会いできることを楽しみにしております",
-        successSubDecline: "ご一緒できないことは残念ですが温かいお祝いのお気持ちに心より感謝いたします"
+        successSubDecline: "ご一緒できないことは残念ですが温かいお祝いのお気持ちに心より感謝いたします",
+        errorText: "回答の保存中にエラーが発生しました。お手数ですが、もう一度お試しください。"
       },
       en: {
         attendanceLabel: "Attendance",
@@ -309,7 +310,8 @@
         optionalPlaceholder: "optional",
         successTitle: "Thank you for your response.",
         successSubAccept: "We look forward to celebrating with you.",
-        successSubDecline: "We are sorry you won't be able to join us, but we truly appreciate your warm wishes."
+        successSubDecline: "We are sorry you won't be able to join us, but we truly appreciate your warm wishes.",
+        errorText: "There was an error saving your RSVP. Please try again."
       },
       vi: {
         attendanceLabel: "Tham dự",
@@ -331,7 +333,8 @@
         optionalPlaceholder: "Tùy chọn",
         successTitle: "Cảm ơn quý khách đã phản hồi.",
         successSubAccept: "Chúng tôi rất mong được gặp quý khách trong ngày trọng đại của mình.",
-        successSubDecline: "Chúng tôi rất tiếc vì quý khách không thể tham dự, nhưng xin chân thành cảm ơn những lời chúc tốt đẹp của quý khách."
+        successSubDecline: "Chúng tôi rất tiếc vì quý khách không thể tham dự, nhưng xin chân thành cảm ơn những lời chúc tốt đẹp của quý khách.",
+        errorText: "Đã xảy ra lỗi khi lưu phản hồi của quý khách. Vui lòng thử lại."
       },
     };
 
@@ -471,8 +474,12 @@
         .catch(error => {
           // If the connection fails, let the user try again
           console.error('Error!', error.message);
-          alert("There was an error saving your RSVP. Please try again.");
+          const activeLang = currentFormLang;
+          document.getElementById('error-text').textContent = formTranslations[activeLang].errorText;
+          errorMsg.classList.remove("hidden");
           btn.disabled = false;
+          btn.style.opacity = "1";
+          btn.textContent = formTranslations[activeLang].submitBtn;
         })
     });
   </script>
