@@ -454,7 +454,7 @@
 
       fetch(scriptURL, { method: 'POST', body: fd, mode:"no-cors" })
         .then(response => {
-          const activeLang = document.documentElement.lang || 'en';
+          const activeLang = currentFormLang;
           const isAttending = document.getElementById('attendance_accept').checked;
 
           document.getElementById('success-title').textContent = formTranslations[activeLang].successTitle;
