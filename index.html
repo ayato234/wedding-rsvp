@@ -353,6 +353,7 @@
 
     function switchFormLanguage(lang) {
       currentFormLang = lang;
+      document.documentElement.lang = currentFormLang;
       document.querySelector(
         '[data-template-id="attendance-label"]',
       ).textContent = formTranslations[lang].attendanceLabel;
