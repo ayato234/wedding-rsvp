@@ -176,6 +176,13 @@
         <input id="email" name="email" type="email" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
+      <!-- Birth date -->
+      <div class="mb-4">
+        <label data-template-id="birthdate-label"
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk" for="birthdate">Birth Date</label>
+        <input id="birthdate" name="birthdate" type="date" required
+          class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
+      </div>
       <!-- Phone -->
       <div>
         <label data-template-id="phone-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
@@ -238,7 +245,8 @@
       <div class="text-center">
         <div data-template-id="confirmation-section"
           class="canva-section bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8">
-          <p id="success-title" class="canva-text text-base leading-relaxed" style="color: #4a3728">Thank you for your response.</p>
+          <p id="success-title" class="canva-text text-base leading-relaxed" style="color: #4a3728">Thank you for your
+            response.</p>
           <p id="success-sub" class="canva-text text-base leading-relaxed" style="color: #4a3728">
           </p>
         </div>
@@ -273,6 +281,7 @@
         attendanceNo: "ご欠席",
         nameLabel: "お名前",
         emailLabel: "メールアドレス",
+        birthdateLabel: "生年月日",
         phoneLabel: "お電話番号",
         addressLabel: "ご住所",
         allergiesLabel: "アレルギー",
@@ -296,6 +305,7 @@
         attendanceNo: "Declines with regret",
         nameLabel: "Name",
         emailLabel: "Email",
+        birthdateLabel: "Birth Date",
         phoneLabel: "Phone Number",
         addressLabel: "Address",
         allergiesLabel: "Allergies and dietary restrictions",
@@ -319,6 +329,7 @@
         attendanceNo: "Từ chối với sự tiếc nuối",
         nameLabel: "Họ và tên",
         emailLabel: "Địa chỉ email",
+        birthdateLabel: "Ngày sinh",
         phoneLabel: "Số điện thoại",
         addressLabel: "Địa chỉ",
         allergiesLabel: "Dị ứng",
@@ -359,6 +370,8 @@
         formTranslations[lang].nameLabel;
       document.querySelector('[data-template-id="email-label"]').textContent =
         formTranslations[lang].emailLabel;
+      document.querySelector('[data-template-id="birthdate-label"]').textContent = 
+        formTranslations[lang].birthdateLabel;
       document.querySelector('[data-template-id="phone-label"]').textContent =
         formTranslations[lang].phoneLabel;
       document.getElementById('phone').placeholder = formTranslations[lang].optionalPlaceholder;
@@ -452,7 +465,7 @@
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
 
-      fetch(scriptURL, { method: 'POST', body: fd, mode:"no-cors" })
+      fetch(scriptURL, { method: 'POST', body: fd, mode: "no-cors" })
         .then(response => {
           const activeLang = currentFormLang;
           const isAttending = document.getElementById('attendance_accept').checked;
