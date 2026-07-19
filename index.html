@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="jp">
 
 <head>
   <script>
@@ -348,7 +348,7 @@
       },
     };
 
-    let currentFormLang = "en";
+    let currentFormLang = "jp";
 
     function switchFormLanguage(lang) {
       currentFormLang = lang;
@@ -427,14 +427,14 @@
       .addEventListener("click", () => switchFormLanguage("vi"));
 
     // Initialize form with English language
-    switchFormLanguage("en");
+    switchFormLanguage("jp");
 
     // Update attendance radio button labels to show proper English phrases on load
     const attendanceYesLabel = document.querySelector(
-      'input[name="attendance"][value="Accepts with pleasure"]',
+      'input[name="attendance"][value="ご出席"]',
     ).nextElementSibling;
     const attendanceNoLabel = document.querySelector(
-      'input[name="attendance"][value="Declines with regret"]',
+      'input[name="attendance"][value="ご欠席"]',
     ).nextElementSibling;
     attendanceYesLabel.textContent = formTranslations.en.attendanceYes;
     attendanceNoLabel.textContent = formTranslations.en.attendanceNo;
