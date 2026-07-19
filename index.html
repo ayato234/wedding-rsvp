@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="jp">
 
 <head>
   <script>
@@ -136,11 +136,11 @@
       <!-- Language Selector -->
       <div class="flex gap-2 justify-center mb-6">
         <button id="lang-form-jp" type="button"
-          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-white text-[#d4844a] transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
+          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#d4844a] text-white transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
           日本語
         </button>
         <button id="lang-form-en" type="button"
-          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#d4844a] text-white transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
+          class="px-3 py-1.5 text-sm font-medium rounded-lg bg-white text-[#d4844a] transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
           English
         </button>
         <button id="lang-form-vi" type="button"
@@ -154,10 +154,10 @@
           class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk"></label>
         <div class="flex gap-6 justify-center">
           <label class="flex items-center radio-wrapper cursor-pointer"><input id="attendance_accept" type="radio"
-              name="attendance" value="Accepts with pleasure" required /><span data-template-id="attendance-yes"
+              name="attendance" value="ご出席" required /><span data-template-id="attendance-yes"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
           <label class="flex items-center radio-wrapper cursor-pointer"><input id="attendance_decline" type="radio"
-              name="attendance" value="Declines with regret" /><span data-template-id="attendance-no"
+              name="attendance" value="ご欠席" /><span data-template-id="attendance-no"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
         </div>
       </div>
@@ -165,47 +165,47 @@
       <div>
         <label data-template-id="name-label"
           class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
-          for="full_name">Name</label>
+          for="full_name">お名前</label>
         <input id="full_name" name="full_name" type="text" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
       <!-- Email -->
       <div>
         <label data-template-id="email-label"
-          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk" for="email">Email</label>
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk" for="email">メールアドレス</label>
         <input id="email" name="email" type="email" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
       <!-- Birth date -->
       <div class="mb-4">
         <label data-template-id="birthdate-label"
-          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk" for="birthdate">Birth Date</label>
+          class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk" for="birthdate">生年月日</label>
         <input id="birthdate" name="birthdate" type="date" required
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
       </div>
       <!-- Phone -->
       <div>
         <label data-template-id="phone-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
-          for="phone">Phone Number</label>
+          for="phone">お電話番号</label>
         <input id="phone" name="phone" type="tel"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors"
-          placeholder="(optional)" />
+          placeholder="任意" />
       </div>
       <!-- Address -->
       <div>
         <label data-template-id="address-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
-          for="address">Address</label>
+          for="address">ご住所</label>
         <input id="address" name="address" type="text"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors"
-          placeholder="(optional)" />
+          placeholder="任意" />
       </div>
       <!-- Allergies -->
       <div>
         <label data-template-id="allergies-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
-          for="allergies">Allergies and dietary restrictions</label>
+          for="allergies">アレルギー</label>
         <textarea id="allergies" name="allergies" rows="2"
           class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none"
-          placeholder="Please let us know if you have any allergies or dietary restrictions."></textarea>
+          placeholder="食物アレルギーがございましたらご記入ください"></textarea>
       </div>
       <!-- After-Party -->
       <div>
@@ -213,10 +213,10 @@
           class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk">After-Party</label>
         <div class="flex gap-6 justify-center">
           <label class="flex items-center radio-wrapper cursor-pointer"><input id="afterparty_join" type="radio"
-              name="afterparty" value="Will Join" required /><span data-template-id="afterparty-yes"
+              name="afterparty" value="参加する" required /><span data-template-id="afterparty-yes"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
           <label class="flex items-center radio-wrapper cursor-pointer"><input id="afterparty_skip" type="radio"
-              name="afterparty" value="Will not join" required /><span data-template-id="afterparty-no"
+              name="afterparty" value="参加しない" required /><span data-template-id="afterparty-no"
               class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
         </div>
         <p id="afterparty-note" class="text-xs text-[#8b6f47] text-center mt-2">
@@ -245,8 +245,7 @@
       <div class="text-center">
         <div data-template-id="confirmation-section"
           class="canva-section bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8">
-          <p id="success-title" class="canva-text text-base leading-relaxed" style="color: #4a3728">Thank you for your
-            response.</p>
+          <p id="success-title" class="canva-text text-base leading-relaxed" style="color: #4a3728">ご回答ありがとうございました</p>
           <p id="success-sub" class="canva-text text-base leading-relaxed" style="color: #4a3728">
           </p>
         </div>
@@ -289,7 +288,7 @@
         afterpartyLabel: "アフターパーティー",
         afterpartyYes: "参加する",
         afterpartyNo: "参加しない",
-        afterpartyNote: "披露宴とアフターパーティーは続けて開催いたしますのでそのまま会場でお過ごしいただけます",
+        afterpartyNote: "披露宴とアフターパーティーは続けて開催いたしますので<br>そのまま会場でお過ごしいただけます",
         messageLabel: "メッセージ",
         messagePlaceholder: "ご自由にメッセージをご記入ください",
         submitBtn: "招待状に回答する",
@@ -313,7 +312,7 @@
         afterpartyLabel: "After-Party",
         afterpartyYes: "Will join",
         afterpartyNo: "Will not join",
-        afterpartyNote: "The wedding reception and the after-party will be held consecutively. You are welcome to remain at the venue between the two events.",
+        afterpartyNote: "The wedding reception and the after-party will be held consecutively.<br>You are welcome to remain at the venue between the two events.",
         messageLabel: "Message",
         messagePlaceholder: "Feel free to leave us a message.",
         submitBtn: "RSVP",
@@ -349,7 +348,7 @@
       },
     };
 
-    let currentFormLang = "en";
+    let currentFormLang = "jp";
 
     function switchFormLanguage(lang) {
       currentFormLang = lang;
@@ -397,7 +396,7 @@
         .forEach(
           (el) => (el.textContent = formTranslations[lang].afterpartyNo),
         );
-      document.getElementById('afterparty-note').textContent = formTranslations[lang].afterpartyNote;
+      document.getElementById('afterparty-note').innerHTML = formTranslations[lang].afterpartyNote;
       document.querySelector(
         '[data-template-id="message-label"]',
       ).textContent = formTranslations[lang].messageLabel;
@@ -427,8 +426,8 @@
       .getElementById("lang-form-vi")
       .addEventListener("click", () => switchFormLanguage("vi"));
 
-    // Initialize form with English language
-    switchFormLanguage("en");
+    // Initialize form with Japanese language
+    switchFormLanguage("jp");
 
     // Update attendance radio button labels to show proper English phrases on load
     const attendanceYesLabel = document.querySelector(
