@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+    <script>
+        window["__codeletBootstrap__"] = JSON.parse(
+            '{"A":"A","B":"20260710-05-9ed98a3"}',
+        );
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding After-Party</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Noto+Sans+JP:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+            background-color: #f7e7cd;
+        }
+
+        .font-serif-display {
+            font-family: "Alex Brush", cursive;
+        }
+
+        .title-main {
+            font-family: "Alex Brush", cursive;
+            font-size: 3.5rem;
+        }
+
+        /* Adds a red/orange asterisk to required fields */
+        .required-asterisk::after {
+            content: " *";
+            color: #c97340;
+        }
+
+        @keyframes fall-cw {
+            0% {
+                opacity: 1;
+                transform: translateY(-100px) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        @keyframes fall-ccw {
+            0% {
+                opacity: 1;
+                transform: translateY(-100px) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: translateY(100vh) rotate(-360deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .leaf {
+            position: fixed;
+            font-size: 2.5rem;
+            pointer-events: none;
+            z-index: 10;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom radio button styling */
+        .radio-wrapper input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d4844a;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+            background: white;
+            flex-shrink: 0;
+        }
+
+        .radio-wrapper input[type="radio"]:hover {
+            border-color: #c97340;
+            box-shadow: 0 0 8px rgba(212, 132, 74, 0.2);
+        }
+
+        .radio-wrapper input[type="radio"]:checked {
+            background: linear-gradient(135deg, #d4844a 0%, #c97340 100%);
+            border-color: #c97340;
+            box-shadow: 0 0 12px rgba(212, 132, 74, 0.3);
+        }
+
+        .decorative-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4844a, transparent);
+            margin: 1rem 0;
+        }
+
+        #rsvp-form {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        #success-msg {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+</head>
+
+<body data-template-id="__page-root" class="min-h-screen py-16 px-4">
+    <div id="app"></div>
+    <main class="max-w-lg mx-auto">
+        <div class="text-center mb-2">
+            <h1 data-template-id="page-title"
+                class="canva-text title-font text-center leading-relaxed title-main text-[#6b4423]">Wedding After-Party
+            </h1>
+            <p class="text-[#c97b4d] text-sm tracking-[0.3em] mb-3">AYATO &amp; MAI LY</p>
+        </div>
+        <div class="decorative-line mb-10 mx-auto" style="max-width: 240px"></div>
+        <form id="rsvp-form"
+            class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8 space-y-6">
+            <!-- Language Selector -->
+            <div class="flex gap-2 justify-center mb-6">
+                <button id="lang-form-jp" type="button"
+                    class="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#d4844a] text-white transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
+                    日本語
+                </button>
+                <button id="lang-form-en" type="button"
+                    class="px-3 py-1.5 text-sm font-medium rounded-lg bg-white text-[#d4844a] transition-all hover:bg-[#c97340] hover:text-white border border-[#d4844a]">
+                    English
+                </button>
+            </div>
+            <p id="afterparty-text-0" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">ご覧いただきありがとうございます</p>
+            <p id="afterparty-text-1" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                このたび私たちは<br>
+                家族や親しい方々に見守られながら<br>
+                結婚式を迎えることとなりました
+            </p>
+            <p id="afterparty-text-2" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                その大切な時間を<br>
+                これまで私たちとご縁のある皆さまとも一緒に楽しみたいと思い<br>
+                アフターパーティーを開催いたします
+            </p>
+            <p id="afterparty-datetime" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                <b>日時</b><br>
+                2026年10月11日（日）<br>
+                20時15分～21時45分
+            </p>
+            <p id="afterparty-location" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                場所<br>
+                Dynamic Kitchen & Bar<br>
+                響 風庭 赤坂<br>
+                <a href="https://maps.app.goo.gl/usCiHuy5a1xAoqDMA" target="_blank" class="text-[#c97340] hover:underline">東京都港区赤坂1-11-44 赤坂インターシティ2F</a>
+            </p>
+            <p id="afterparty-text-3" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                ささやかな会ではありますが<br>
+                日頃の感謝の気持ちを込めて<br>
+                お飲み物や軽食、デザートをご用意し<br>
+                ご招待という形で皆さまをお迎えいたします</p>
+
+            <p id="afterparty-text-4" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                お時間が合いましたら<br>
+                ぜひお気軽にご参加いただき<br>
+                皆さまと楽しいひとときを過ごせたら幸いです</p>
+
+            <p id="afterparty-text-5" class="canva-text block text-sm font-medium text-[#6b4423] mb-3 text-center">
+                お手数ですが<br>
+                ご出欠につきまして以下のフォームより<br>
+                8月23日までにご回答をお願いいたします</p>
+
+            </p>
+            <div class="decorative-line mb-10 mx-auto" style="max-width: 240px"></div>
+            <!-- After-Party -->
+            <div>
+                <label data-template-id="afterparty-label"
+                    class="canva-text block text-sm font-medium text-[#6b4423] mb-3 required-asterisk">After-Party</label>
+                <div class="flex gap-6 justify-center">
+                    <label class="flex items-center radio-wrapper cursor-pointer"><input id="afterparty_join"
+                            type="radio" name="afterparty" value="参加する" required /><span
+                            data-template-id="afterparty-yes"
+                            class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
+                    <label class="flex items-center radio-wrapper cursor-pointer"><input id="afterparty_skip"
+                            type="radio" name="afterparty" value="参加しない" required /><span
+                            data-template-id="afterparty-no"
+                            class="canva-text ml-3 text-sm text-[#6b4423]"></span></label>
+                </div>
+            </div>
+            <!-- Attendance -->
+            <input type="hidden" name="attendance" value="ご欠席">
+            <!-- Name -->
+            <div>
+                <label data-template-id="name-label"
+                    class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
+                    for="full_name">お名前</label>
+                <input id="full_name" name="full_name" type="text" required
+                    class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
+            </div>
+            <!-- Email -->
+            <div>
+                <label data-template-id="email-label"
+                    class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
+                    for="email">メールアドレス</label>
+                <input id="email" name="email" type="email" required
+                    class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
+            </div>
+            <!-- Birth date -->
+            <div class="mb-4">
+                <label data-template-id="birthdate-label"
+                    class="canva-text block text-sm font-medium text-[#6b4423] mb-1 required-asterisk"
+                    for="birthdate">生年月日</label>
+                <input id="birthdate" name="birthdate" type="date" required
+                    class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors" />
+            </div>
+            <!-- Phone -->
+            <input type="hidden" name="phone" value="">
+            <!-- Address -->
+            <input type="hidden" name="address" value="">
+            <!-- Allergies -->
+            <div>
+                <label data-template-id="allergies-label"
+                    class="canva-text block text-sm font-medium text-[#6b4423] mb-1" for="allergies">アレルギー</label>
+                <textarea id="allergies" name="allergies" rows="2"
+                    class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none"
+                    placeholder="食物アレルギーがございましたらご記入ください"></textarea>
+            </div>
+            <!-- Message -->
+            <div>
+                <label data-template-id="message-label" class="canva-text block text-sm font-medium text-[#6b4423] mb-1"
+                    for="message">メッセージ</label>
+                <textarea id="message" name="message" rows="3"
+                    class="w-full border border-[#e8d4c4] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#d4844a] focus:ring-1 focus:ring-[#d4844a]/30 transition-colors resize-none"
+                    placeholder="ご自由にメッセージをご記入ください"></textarea>
+            </div>
+            <!-- Honeypot Field -->
+            <div style="display: none" aria-hidden="true">
+                <label for="website">Leave this field blank</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <!-- Submit Button -->
+            <button data-template-id="submit-btn" type="submit"
+                class="canva-button w-full bg-[#c97340] text-white rounded-lg py-3 text-sm font-medium hover:bg-[#b8643a] transition-colors shadow-md hover:shadow-lg mt-6">回答する</button>
+        </form>
+        <div id="success-msg" class="hidden text-center">
+            <div class="text-center">
+                <div data-template-id="confirmation-section"
+                    class="canva-section bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#e8d4c4] p-8">
+                    <p id="success-title" class="canva-text text-base leading-relaxed" style="color: #4a3728">
+                        ご回答ありがとうございました</p>
+                    <p id="success-sub" class="canva-text text-base leading-relaxed" style="color: #4a3728">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="error-msg" class="hidden text-center py-6">
+            <p id="error-text" class="canva-text text-base"></p>
+        </div>
+    </main>
+    <script>
+        // Create falling autumn leaves
+        const leaves = ["🍂", "🍁", "🍃"];
+        function createLeaf() {
+            const leaf = document.createElement("div");
+            leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)];
+            leaf.className = "leaf";
+            leaf.style.left = Math.random() * 100 + "%";
+            leaf.style.top = "-100px";
+            const duration = 8 + Math.random() * 4;
+            const direction = Math.random() > 0.5 ? "cw" : "ccw";
+            leaf.style.animation = `fall-${direction} ${duration}s linear forwards`;
+            document.getElementById("app").appendChild(leaf);
+            setTimeout(() => leaf.remove(), duration * 1000);
+        }
+        setInterval(createLeaf, 1500);
+
+        // Language translations for form labels and inputs
+        const formTranslations = {
+            jp: {
+                nameLabel: "お名前",
+                emailLabel: "メールアドレス",
+                birthdateLabel: "生年月日",
+                allergiesLabel: "アレルギー",
+                allergiesPlaceholder: "食物アレルギーがございましたらご記入ください",
+                afterpartyLabel: "アフターパーティーへのご出欠をお知らせください",
+                afterpartyYes: "参加します",
+                afterpartyNo: "欠席します",
+                afterpartyText0: "ご覧いただきありがとうございます",
+                afterpartyText1: "このたび私たちは<br>家族や親しい方々に見守られながら<br>結婚式を迎えることとなりました",
+                afterpartyText2: "その大切な時間を<br>これまで私たちとご縁のある皆さまとも一緒に楽しみたいと思い<br>アフターパーティーを開催いたします",
+                afterpartyText3: "ささやかな会ではありますが<br>日頃の感謝の気持ちを込めて<br>お飲み物や軽食、デザートをご用意し<br>ご招待という形で皆さまをお迎えいたします",
+                afterpartyText4: "お時間が合いましたら<br>ぜひお気軽にご参加いただき<br>皆さまと楽しいひとときを過ごせたら幸いです",
+                afterpartyText5: "お手数ですが<br>ご出欠につきまして以下のフォームより<br>8月23日までにご回答をお願いいたします",
+                afterpartyDatetime: "<b>日時</b><br>2026年10月11日（日）<br>20時15分～21時45分",
+                afterpartyLocation: "<b>場所</b><br>Dynamic Kitchen & Bar 響 風庭 赤坂<br><a href='https://maps.app.goo.gl/usCiHuy5a1xAoqDMA' target='_blank' class='text-[#c97340] hover:underline'>東京都港区赤坂1-11-44 赤坂インターシティ2F</a>",
+                messageLabel: "メッセージ",
+                messagePlaceholder: "ご自由にメッセージをご記入ください",
+                submitBtn: "招待状に回答する",
+                optionalPlaceholder: "任意",
+                successTitle: "ご回答ありがとうございました",
+                successSubAccept: "当日お会いできることを楽しみにしております",
+                successSubDecline: "ご一緒できないことは残念ですが温かいお祝いのお気持ちに心より感謝いたします",
+                errorText: "回答の保存中にエラーが発生しました。お手数ですが、もう一度お試しください。"
+            },
+            en: {
+                nameLabel: "Name",
+                emailLabel: "Email",
+                birthdateLabel: "Birth Date",
+                allergiesLabel: "Allergies and dietary restrictions",
+                allergiesPlaceholder: "Please let us know if you have any allergies or dietary restrictions.",
+                afterpartyLabel: "Will you be joining us?",
+                afterpartyYes: "Yes, I'd love to!",
+                afterpartyNo: "Sorry, I can't make it.",
+                afterpartyText0: "Thanks for taking the time to read our after-party invitation!",
+                afterpartyText1: "We're so excited to celebrate our wedding surrounded by our family and closest loved ones.",
+                afterpartyText2: "To make this special day even more memorable, we'd love to celebrate with all the wonderful people we've met along the way. We hope you'll join us for our after-party!",
+                afterpartyText3: "It's a casual and relaxed gathering, and we'd love to thank you for being part of our lives by inviting you to celebrate with us. We'll have drinks, light bites, and desserts prepared for everyone to enjoy.",
+                afterpartyText4: "If you're available, we'd be so happy to have you there and spend the evening celebrating together.",
+                afterpartyText5: "Please let us know if you can make it by filling out the RSVP form below by 23 August.",
+                afterpartyDatetime: "<b>Date</b><br>Oct 11 2026<br>8.15 pm – 9.45 pm",
+                afterpartyLocation: "<b>Location</b><br>Dynamic Kitchen & Bar Hibiki Futei Akasaka<br><a href='https://maps.app.goo.gl/usCiHuy5a1xAoqDMA' target='_blank' class='text-[#c97340] hover:underline'>Akasaka Intercity 2F, 1-11-44 Akasaka, Minato-ku</a>",
+                messageLabel: "Message",
+                messagePlaceholder: "Feel free to leave us a message.",
+                submitBtn: "RSVP",
+                optionalPlaceholder: "optional",
+                successTitle: "Thank you for your response.",
+                successSubAccept: "We look forward to celebrating with you.",
+                successSubDecline: "We are sorry you won't be able to join us, but we truly appreciate your warm wishes.",
+                errorText: "There was an error saving your RSVP. Please try again."
+            },
+        };
+
+        let currentFormLang = "jp";
+
+        function switchFormLanguage(lang) {
+            currentFormLang = lang;
+            document.documentElement.lang = currentFormLang;
+            document.querySelector('[data-template-id="name-label"]').textContent =
+                formTranslations[lang].nameLabel;
+            document.querySelector('[data-template-id="email-label"]').textContent =
+                formTranslations[lang].emailLabel;
+            document.querySelector('[data-template-id="birthdate-label"]').textContent =
+                formTranslations[lang].birthdateLabel;
+            document.querySelector(
+                '[data-template-id="allergies-label"]',
+            ).textContent = formTranslations[lang].allergiesLabel;
+            document.getElementById('allergies').placeholder = formTranslations[lang].allergiesPlaceholder;
+            document.querySelector(
+                '[data-template-id="afterparty-label"]',
+            ).textContent = formTranslations[lang].afterpartyLabel;
+            document
+                .querySelectorAll('[data-template-id="afterparty-yes"]')
+                .forEach(
+                    (el) => (el.textContent = formTranslations[lang].afterpartyYes),
+                );
+            document
+                .querySelectorAll('[data-template-id="afterparty-no"]')
+                .forEach(
+                    (el) => (el.textContent = formTranslations[lang].afterpartyNo),
+                );
+            document.getElementById('afterparty-text-0').innerHTML = formTranslations[lang].afterpartyText0;
+            document.getElementById('afterparty-text-1').innerHTML = formTranslations[lang].afterpartyText1;
+            document.getElementById('afterparty-text-2').innerHTML = formTranslations[lang].afterpartyText2;
+            document.getElementById('afterparty-text-3').innerHTML = formTranslations[lang].afterpartyText3;
+            document.getElementById('afterparty-text-4').innerHTML = formTranslations[lang].afterpartyText4;
+            document.getElementById('afterparty-text-5').innerHTML = formTranslations[lang].afterpartyText5;
+            document.getElementById('afterparty-datetime').innerHTML = formTranslations[lang].afterpartyDatetime;
+            document.getElementById('afterparty-location').innerHTML = formTranslations[lang].afterpartyLocation;
+            document.querySelector(
+                '[data-template-id="message-label"]',
+            ).textContent = formTranslations[lang].messageLabel;
+            document.getElementById('message').placeholder = formTranslations[lang].messagePlaceholder;
+            document.querySelector('[data-template-id="submit-btn"]').textContent =
+                formTranslations[lang].submitBtn;
+
+            // Update form language button states
+            document
+                .querySelectorAll("#lang-form-jp, #lang-form-en")
+                .forEach((btn) => {
+                    btn.classList.remove("bg-[#d4844a]", "text-white");
+                    btn.classList.add("bg-white", "text-[#d4844a]");
+                });
+            const activeBtn = document.getElementById(`lang-form-${lang}`);
+            activeBtn.classList.remove("bg-white", "text-[#d4844a]");
+            activeBtn.classList.add("bg-[#d4844a]", "text-white");
+        }
+
+        document
+            .getElementById("lang-form-jp")
+            .addEventListener("click", () => switchFormLanguage("jp"));
+        document
+            .getElementById("lang-form-en")
+            .addEventListener("click", () => switchFormLanguage("en"));
+
+        // Initialize form with English language
+        switchFormLanguage("jp");
+
+        const form = document.getElementById("rsvp-form");
+        const successMsg = document.getElementById("success-msg");
+        const errorMsg = document.getElementById("error-msg");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const btn = document.querySelector('[data-template-id="submit-btn"]');
+            btn.disabled = true;
+            btn.style.opacity = "0.6";
+            errorMsg.classList.add("hidden");
+
+            const fd = new FormData(form);
+            // --- HONEYPOT SPAM CHECK ---
+            // If the 'website' field has text, it's a bot.
+            if (fd.get("website") !== "") {
+                console.log("Spam detected and blocked.");
+                // Pretend it was successful to trick the bot
+                form.classList.add("hidden");
+                errorMsg.classList.add("hidden");
+                successMsg.classList.remove("hidden");
+                return; // This stops the script from sending the data to your database
+            }
+            // ---------------------------
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw4Z5LCQlhpoEZQ4i5TNOSMfaz9VXLHBDV5HFBXsdwrFcQi2XjugSiYbfeo-Udh0y6M/exec'
+
+            fetch(scriptURL, { method: 'POST', body: fd, mode: "no-cors" })
+                .then(response => {
+                    const activeLang = currentFormLang;
+                    const isAttending = document.getElementById('afterparty_join').checked;
+
+                    document.getElementById('success-title').textContent = formTranslations[activeLang].successTitle;
+
+                    if (isAttending) {
+                        document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubAccept;
+                    } else {
+                        document.getElementById('success-sub').textContent = formTranslations[activeLang].successSubDecline;
+                    }
+                    form.classList.add("hidden");
+                    errorMsg.classList.add("hidden");
+                    successMsg.classList.remove("hidden");
+                })
+                .catch(error => {
+                    // If the connection fails, let the user try again
+                    console.error('Error!', error.message);
+                    const activeLang = currentFormLang;
+                    document.getElementById('error-text').textContent = formTranslations[activeLang].errorText;
+                    errorMsg.classList.remove("hidden");
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                    btn.textContent = formTranslations[activeLang].submitBtn;
+                })
+        });
+    </script>
+    <script>
+        (function () {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement("script");
+                    d.innerHTML =
+                        "window.__CF$cv$params={r:'a1a0abeb7310a067',t:'MTc4Mzg2NTg0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName("head")[0].appendChild(d);
+                }
+            }
+            if (document.body) {
+                var a = document.createElement("iframe");
+                a.height = 1;
+                a.width = 1;
+                a.style.position = "absolute";
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = "none";
+                a.style.visibility = "hidden";
+                document.body.appendChild(a);
+                if ("loading" !== document.readyState) c();
+                else if (window.addEventListener)
+                    document.addEventListener("DOMContentLoaded", c);
+                else {
+                    var e = document.onreadystatechange || function () { };
+                    document.onreadystatechange = function (b) {
+                        e(b);
+                        "loading" !== document.readyState &&
+                            ((document.onreadystatechange = e), c());
+                    };
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
